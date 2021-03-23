@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script type="text/javascript" src="songs.js"></script>
+        <script>
+            $(document).ready(() => {
+                // display data as raw string
+                document.getElementById("raw").innerHTML =
+                `
+                <div>
+                    ${data}
+                </div>
+                <br/>
+                `
+
+                // filter data
+                document.getElementById("selector").innerHTML = 
+                `
+                <form>
+                    <select name="genre">
+                        <option value="All"> All </option>
+                        <option value="Classical">Classical</option>
+                        <option value="Pop">Pop</option>
+                        <option value="Hip-Hop/Rap">Hip-Hop/Rap</option>
+                        <option value="Electronica">Electronica</option>
+                        <option value="Rock">Rock</option>
+                    </select>
+                    <input type="button" name="btn" value="filter"/>
+                </form>
+                `
+
+                // display data in user friendly way
+                let obj = JSON.parse(data)
+                for (song of obj.songs) {
+                    document.getElementById("filtered-songs").innerHTML += 
+                    `
+                    <div>
+                        <p> ${song.title} </p>
+                        <p> Artist: ${song.artist} </p>
+                        <p> Genre: ${song.genre} </p>
+                        <p> Released ${song.year} </p>
+                        <br/>
+                    </div>
+                    `
+                }
+
+                document.forms[0].btn.onclick = () => {
+                    document.getElementById("filtered-songs").innerHTML = ""
+                    for (song of obj.songs) {
+                        if (document.forms[0].genre.value == "All" || document.forms[0].genre.value == song.genre) {
+                            document.getElementById("filtered-songs").innerHTML += 
+                            `
+                            <div>
+                                <p> ${song.title} </p>
+                                <p> Artist: ${song.artist} </p>
+                                <p> Genre: ${song.genre} </p>
+                                <p> Released ${song.year} </p>
+                                <br/>
+                            </div>
+                            `
+                        }
+                    }
+                }
+            })
+        </script>
+    </head>
+    <body>
+        <div id="raw"></div>
+        <div id="selector"></div>
+        <div id="filtered-songs"></div>
+    </body>
+</html>

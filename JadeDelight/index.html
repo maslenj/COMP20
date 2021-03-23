@@ -37,7 +37,7 @@ function makeSelect(name, minRange, maxRange)
 
 let item_counts = [0, 0, 0, 0, 0]
 
-$(document).ready(() => {
+$(document).ready(() => {	
 	$('form p:nth-child(3)').css({'display': 'none'})
 	$('form p:nth-child(4)').css({'display': 'none'})
 	$('select').on('change', function() {
@@ -67,7 +67,6 @@ $(document).ready(() => {
 			$('form p:nth-child(4)').css({'display': 'none'})
 		}
 	})
-
 
 	$(':button').on('click', () => {
 		// validate form
@@ -103,7 +102,7 @@ $(document).ready(() => {
 
 function validate() {
 	let last_name = $("input[name=lname]").val()
-	let phone_num = $("input[name=phone").val()
+	let phone_num = $("input[name=phone]").val()
 	if (last_name == "") {
 		alert("please enter a valid last name")
 	} else {

@@ -1,21 +1,23 @@
+<!DOCTYPE html>
 <html>
-
 <head>
     <title>API Fun</title>
     <meta charset="utf-8" />
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script>
-
+        // function called whenever a new character needs to be generated
         function getCharacter() {
             request = new XMLHttpRequest();
+            // select a random number from 1 to 10 to select random character
             let choice = Math.round(Math.random() * 10 + 1)
+            // api call
             request.open("GET", "https://swapi.dev/api/people/" + choice + "/", true)
             request.onreadystatechange = function () {
                 if (request.readyState == 4 && request.status == 200) {
-                    // Step 5: wait for done + success
-                    console.log("5 - response received");
+                    // wait for done + success
                     result = request.responseText;
                     character = JSON.parse(result);
+                    // replace data element with data from request
                     document.getElementById("data").innerHTML = 
                     `
                     <p> Your Character: ${character.name} </p>
@@ -25,17 +27,17 @@
                     `
                 }
                 else if (request.readyState == 4 && request.status != 200) {
-                    document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+                    document.getElementById("data").innerHTML = "Something is wrong!";
                 }
                 else if (request.readyState == 3) {
-                    document.getElementById("data").innerHTML = "Too soon!  Try again";
+                    document.getElementById("data").innerHTML = "Too soon! Try again";
                 }
             }
             request.send();
-			console.log("4 - Request sent");
         }
 
         $(document).ready(() => {
+            // get character when page loads and when button clicked
             getCharacter()
             document.getElementById("btn").onclick = getCharacter;
         })

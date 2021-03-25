@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>API Fun</title>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+
+        function getCharacter() {
+            request = new XMLHttpRequest();
+            let choice = Math.round(Math.random() * 10 + 1)
+            request.open("GET", "https://swapi.dev/api/people/" + choice + "/", true)
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == 200) {
+                    // Step 5: wait for done + success
+                    console.log("5 - response received");
+                    result = request.responseText;
+                    character = JSON.parse(result);
+                    document.getElementById("data").innerHTML = 
+                    `
+                    <p> Your Character: ${character.name} </p>
+                    <p> Height: ${character.height} cm </p>
+                    <p> Mass: ${character.mass} kg </p>
+                    <p> Eye Color: ${character.eye_color} </p>
+                    `
+                }
+                else if (request.readyState == 4 && request.status != 200) {
+                    document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+                }
+                else if (request.readyState == 3) {
+                    document.getElementById("data").innerHTML = "Too soon!  Try again";
+                }
+            }
+            request.send();
+			console.log("4 - Request sent");
+        }
+
+        $(document).ready(() => {
+            getCharacter()
+            document.getElementById("btn").onclick = getCharacter;
+        })
+    </script>
+    <style>
+    </style>
+</head>
+    <h1>Star Wars Character Generator</h1>
+    <div id="data">Loading...</div>
+    <button id="btn"> Generate New Character </button>
+    <h2> About This Page </h2>
+    <p>
+        The API I selected for this project is called SWAPI and is found on <a href="https://swapi.dev/">https://swapi.dev/</a>. 
+        The API's purpose is to give users data about things in the Star Wars universe. 
+        In this project, I used the API to get random Star Wars characters and display data about them on the page.
+        To do this, I called a get request on 'https://swapi.dev/api/people/' + choice + '/', where choice was a randomly
+        generated integer. This returned a JSON which had data about whichever character had the choice index.
+        One website where I think this API might be useful would be some sort of Star Wars reference site where users
+        could go to learn about Star Wars characters. Another way it could be used is in some sort of game
+        where users are able to play as different Star Wars characters.
+    </p>
+</html>

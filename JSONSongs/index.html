@@ -1,6 +1,7 @@
 <html>
     <head>
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <link rel="stylesheet" href="styles.css">
         <script type="text/javascript" src="songs.js"></script>
         <script>
             $(document).ready(() => {
@@ -8,6 +9,7 @@
                 document.getElementById("raw").innerHTML =
                 `
                 <div>
+                    <h3> JSON String: </h3>
                     ${data}
                 </div>
                 <br/>
@@ -16,6 +18,7 @@
                 // filter data
                 document.getElementById("selector").innerHTML = 
                 `
+                <h3> Filter: </h3>
                 <form>
                     <select name="genre">
                         <option value="All"> All </option>
@@ -34,12 +37,12 @@
                 for (song of obj.songs) {
                     document.getElementById("filtered-songs").innerHTML += 
                     `
-                    <div>
+                    <div class="songDisplay">
                         <p> ${song.title} </p>
                         <p> Artist: ${song.artist} </p>
                         <p> Genre: ${song.genre} </p>
                         <p> Released ${song.year} </p>
-                        <br/>
+                        <hr>
                     </div>
                     `
                 }
@@ -50,12 +53,12 @@
                         if (document.forms[0].genre.value == "All" || document.forms[0].genre.value == song.genre) {
                             document.getElementById("filtered-songs").innerHTML += 
                             `
-                            <div>
+                            <div class="songDisplay"> 
                                 <p> ${song.title} </p>
                                 <p> Artist: ${song.artist} </p>
                                 <p> Genre: ${song.genre} </p>
                                 <p> Released ${song.year} </p>
-                                <br/>
+                                <hr>
                             </div>
                             `
                         }

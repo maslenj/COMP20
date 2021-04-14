@@ -44,8 +44,8 @@
         echo "<br>";
         echo "Subtotal:" . $_GET['subtotal'] . "<br>";
         echo "Tax:" . $_GET['tax'] . "<br>";
-        echo "Total:" . $_GET['total'] . "<br><br>";
-        echo $_GET['pickupMessage'];
+        echo "Total:" . $_GET['total'] . "<br>";
+        echo '<p>' . $_GET['pickupMessage'] . '</p>';
     ?>
 </body>
 </html>

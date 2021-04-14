@@ -15,37 +15,52 @@
 
         function validate() {
             let d = new Date()
-			let h = d.getHours()
-			let m = d.getMinutes()
+            let h = d.getHours()
+            let m = d.getMinutes()
             let pickUpMessage = ""
-			if ($('input[value=delivery]:checked').val() == 'delivery') {
-				m += 30
-				if (m > 60) {
-					m %= 60
-					h++
-				}
-				pickUpMessage += "Your order will be delivered at " + h + ":" + m + '\n'
-			} else {
-				m += 15
-				if (m > 60) {
-					m %= 60
-					h++
-				}
-				pickUpMessage += "Your order can be picked up at " + h + ":" + m + '\n'
-			}
+            if ($('input[value=delivery]:checked').val() == 'delivery') {
+                m += 30
+                if (m > 60) {
+                    m %= 60
+                    h++
+                }
+                pickUpMessage += "Your order will be delivered at " + h + ":" + m + '\n'
+
+                let city = $("input[name=city]").val()
+                let street = $("input[name=street]").val()
+                if (city == "") {
+                    alert("please enter a city")
+                    return false
+                }
+                if (street == "") {
+                    alert("please enter a street")
+                    return false
+                }
+            } else {
+                m += 15
+                if (m > 60) {
+                    m %= 60
+                    h++
+                }
+                pickUpMessage += "Your order can be picked up at " + h + ":" + m + '\n'
+            }
             $("input[name=pickupMessage]").val(pickUpMessage)
             let last_name = $("input[name=lname]").val()
             let phone_num = $("input[name=phone]").val()
             if (last_name == "") {
                 alert("please enter a valid last name")
-            } else {
-                if (!phone_num.match(/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/)) {
-                    alert("please enter a valid phone number")
-                } else {
-                    return true
-                }
+                return false
             }
-            return false
+            if (!phone_num.match(/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/)) {
+                alert("please enter a valid phone number")
+                return false
+            }
+            let total = $("input[name=total]").val()
+            if (total == "") {
+                alert("please order at least one item")
+                return false
+            }
+            return true
         }
 
         function MenuItem(name, cost) {
@@ -112,10 +127,7 @@
     </script>
 
     <h1>Jade Delight</h1>
-    <form   
-        method="GET" 
-        action="http://jimmy-maslen.great-site.net/order.php"
-    >
+    <form method="GET" action="http://jimmy-maslen.great-site.net/order.php">
 
         <p>First Name: <input type="text" name='fname' /></p>
         <p>Last Name*: <input type="text" name='lname' /></p>
@@ -165,7 +177,7 @@
                     echo
                     '<tr>' .
                         '<td>' .
-                        makeSelect("quan" . $i , 0, 10) .
+                        makeSelect("quan" . $i, 0, 10) .
                         '</td>' .
                         '<td>' .
                         $row["name"] .
@@ -184,17 +196,6 @@
             }
             $conn->close();
             ?>
-            <!-- <script language="javascript">
-                var s = "";
-                for (i = 0; i < menuItems.length; i++) {
-                    s += "<tr><td>";
-                    s += makeSelect("quan" + i, 0, 10);
-                    s += "</td><td>" + menuItems[i].name + "</td>";
-                    s += "<td> $ " + menuItems[i].cost.toFixed(2) + "</td>";
-                    s += "<td>$<input type='text' name='cost'/></td></tr>";
-                }
-                document.writeln(s);
-            </script> -->
         </table>
         <p>Subtotal:
             $<input type="text" name='subtotal' id="subtotal" />

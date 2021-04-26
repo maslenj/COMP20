@@ -1,0 +1,20 @@
+{
+  "name": "stocktickerapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "results.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node sample.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maslenj/COMP20.git"
+  },
+  "author": "maslenj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maslenj/COMP20/issues"
+  },
+  "homepage": "https://github.com/maslenj/COMP20#readme"
+}

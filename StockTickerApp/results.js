@@ -1,7 +1,7 @@
 var http = require('http');
 var url = require('url');
 const MongoClient = require('mongodb').MongoClient;
-const conn_url = "mongodb+srv://jmasle01:awesome2002@cluster0.uunkx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";  // connection string goes here
+const conn_url = "mongodb+srv://jmasle01:jmasle01@cluster0.uunkx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";  // connection string goes here
 
 const find_data = (to_find, is_ticker, err_func, callback) => {
   MongoClient.connect(conn_url, { useUnifiedTopology: true }, function (err, db) {

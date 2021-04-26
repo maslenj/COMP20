@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb+srv://jmasle01:awesome2002@cluster0.uunkx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';  // connection string goes here
+const url = 'mongodb+srv://jmasle01:jmasle01@cluster0.uunkx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';  // connection string goes here
 
 // from https://stackabuse.com/reading-and-writing-csv-files-with-node-js/
 const csv = require('csv-parser');

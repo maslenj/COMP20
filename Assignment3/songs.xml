@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="styles.css"?>
+
+<songs>
+    <song>
+        <title>
+            Symphony No. 5
+        </title>
+        <artist>
+            Ludwig van Beethoven
+        </artist>
+        <genre>
+            Classical
+        </genre>
+        <year>
+            1808
+        </year>
+    </song>
+    <song>
+        <title>
+            Cant Hold Us
+        </title>
+        <artist>
+            Macklemore &amp; Ryan Lewis
+        </artist>
+        <genre>
+            Pop
+        </genre>
+        <year>
+            2012
+        </year>
+    </song>
+    <song>
+        <title>
+            The Box
+        </title>
+        <artist>
+            Roddy Ricch
+        </artist>
+        <genre>
+            Hip-Hop/Rap
+        </genre>
+        <year>
+            2019
+        </year>
+    </song>
+    <song>
+        <title>
+            10 Bands
+        </title>
+        <artist>
+            Drake
+        </artist>
+        <genre>
+            Hip-Hop/Rap
+        </genre>
+        <year>
+            2015
+        </year>
+    </song>
+    <song>
+        <title>
+            Guatemala
+        </title>
+        <artist>
+            Rae Sremmurd
+        </artist>
+        <genre>
+            Hip-Hop/Rap
+        </genre>
+        <year>
+            2018
+        </year>
+    </song>
+    <song>
+        <title>
+            Come Get Her
+        </title>
+        <artist>
+            Rae Sremmurd
+        </artist>
+        <genre>
+            Hip-Hop/Rap
+        </genre>
+        <year>
+            2015
+        </year>
+    </song>
+    <song>
+        <title>
+            Ray of Light
+        </title>
+        <artist>
+            Madonna
+        </artist>
+        <genre>
+            Electronica
+        </genre>
+        <year>
+            1998
+        </year>
+    </song>
+    <song>
+        <title>
+            Old Town Road
+        </title>
+        <artist>
+            Lil Nas X
+        </artist>
+        <genre>
+            Pop
+        </genre>
+        <year>
+            2019
+        </year>
+    </song>
+    <song>
+        <title>
+            The Boxer
+        </title>
+        <artist>
+            Simon &amp; Garfunkel
+        </artist>
+        <genre>
+            Rock
+        </genre>
+        <year>
+            1965
+        </year>
+    </song>
+    <song>
+        <title>
+            Fast Car
+        </title>
+        <artist>
+            Tracy Chapman
+        </artist>
+        <genre>
+            Rock
+        </genre>
+        <year>
+            1988
+        </year>
+    </song>
+    <song>
+        <title>
+            Hold On, Were Going Home
+        </title>
+        <artist>
+            Drake, Majid Jordan
+        </artist>
+        <genre>
+            Hip-Hop/Rap
+        </genre>
+        <year>
+            2013
+        </year>
+    </song>
+</songs>

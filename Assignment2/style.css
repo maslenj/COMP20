@@ -1,0 +1,217 @@
+/* HEADER */
+#HEADER {
+    text-align: center;
+    background-color: rgba(33, 33, 33, 0.9);
+    padding: 5px;
+    margin-bottom: 5px;
+    /* background-image: url("./Pictures/Long_Sandwich.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* END HEADER */
+
+/* MAIN PAGE CONTENT */
+
+#MAIN-IMAGE {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+h2 {
+    text-align: center;
+    color: black;
+    padding-top: 15px;
+    text-transform: uppercase;
+}
+
+h3 {
+    text-align: center;
+}
+
+.main-panel {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #5f9ea0;
+    margin-bottom: 50px;
+    padding-bottom: 15px;
+    background-color: rgb(135, 133, 0, 0.9);
+}
+
+.main-text {
+    font-style: italic;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+
+.by-line {
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+
+.order-button {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: yellow;
+    border-radius: 5px;
+    width: 180px;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: red;
+    padding: 5px;
+}
+.order-button:hover{
+    border: thick;
+    border-color: white;
+}
+
+/* END MAIN PAGE CONTENT */
+
+
+/* NAVBAR */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar-element {
+    float: left;
+    background-color: #333;
+}
+
+.navbar-element a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar-element a:hover:not(.active) {
+    background-color: #878500;
+}
+
+.active {
+    background-color: #878500;
+}
+
+/* END NAVBAR */
+
+/* SERVICES */
+.services-image {
+    width: 40%;
+    display: inline;
+}
+
+.services-description {
+    display: inline;
+    vertical-align: top;
+    float: right;
+    width: 58%;
+}
+
+.service-div {
+    margin-left: 5%;
+    margin-right: 5%;
+    overflow: auto;
+}
+
+/* END SERVICES */
+
+/* FOOTER */
+#FOOTER {
+    width: 100%;
+    background-color: rgb(95, 158, 160, 0.9);
+    overflow:auto;
+    bottom:0;
+}
+
+.footer-panel {
+    text-align: center;
+    display: inline-block;
+    width: 33%;
+    height: 100%;
+}
+
+.social-link-image {
+    height: 40px;
+    width:  40px;
+}
+
+.footer-label {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    vertical-align: top;
+}
+
+/* END FOOTER */
+
+body {
+    font-family:sans-serif;
+    display:block;
+    background-color: #B8F4FF;
+
+    /* Also can do background image if we want */
+    background-color:#ccc;
+    background-size: cover;
+    background-image: url("./Pictures/restaurant1.jpg");
+}
+
+h1 {
+    text-align:center; color:#FCF803; font-size:50px; color: white;
+}
+
+/* MEDIA QUERIES */
+
+/* Large Devices */
+@media (min-width: 720px) {
+    #MAIN-IMAGE {
+        width: 600px;
+    }
+    
+    .main-panel {
+        width: 700px;
+    }
+}
+
+@media (max-width: 900px) {
+    /* footer split into lines to make mobile friendly */
+    .footer-panel {
+        width: 100%;
+        display: block;
+    }
+}
+
+@media (max-width: 720px) {
+    #MAIN-IMAGE {
+        width: 90%;
+    }
+
+    .main-text, .by-line {
+        width: 90%;
+    }
+    
+    .main-panel {
+        width: 100%;
+    }
+
+    /* Make mobile friendly */
+    .navbar-element {
+        float: none;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}

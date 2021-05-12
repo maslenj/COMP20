@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <script>
+            let numbers = []
+            for (let i = 0; i < 5; i++)
+                numbers.push(Math.ceil(48 * Math.random()))
+            numbers = numbers.sort((a, b) => {return a-b})
+
+            let lucky_ball = Math.ceil(18 * Math.random())
+            let user_numbers = prompt("What are your winning numbers?")
+            user_numbers = user_numbers.split(" ")
+            for (let i = 0; i < user_numbers.length; i++)
+                user_numbers[i] = parseInt(user_numbers[i])
+            user_numbers = user_numbers.sort((a, b) => {return a-b})
+            let user_lucky_ball = prompt("What is your lucky ball?")
+            
+            document.write("<p> Your numbers are: ")
+            for (let i = 0; i < 4; i++)
+                document.write(user_numbers[i] + ", ")
+            document.write("and " + user_numbers[4] + ".")
+            document.write("</p>")
+            document.write("<p>Your lucky ball is " + user_lucky_ball + ".</p>")
+
+            document.write("<p> The winning numbers are: ")
+            for (let i = 0; i < 4; i++)
+                document.write(numbers[i] + ", ")
+            document.write("and " + numbers[4] + "!")
+            document.write("</p>")
+            document.write("<p>The lucky ball is " + lucky_ball + "!</p>")
+
+            let num_matches = 0
+            let p1 = 0
+            let p2 = 0
+            while (p1 < 5 && p2 < 5) {
+                console.log(p1)
+                console.log(p2)
+                console.log(num_matches)
+
+                if (numbers[p1] == user_numbers[p2]) {
+                    num_matches++;
+                    p1++;
+                } else if (numbers[p1] > user_numbers[p2]) {
+                    p2++;
+                } else if (user_numbers[p2] > numbers[p1]) {
+                    p1++;
+                }
+            }   
+
+            document.write("<p> You hace " + num_matches + " matches </p>")
+            let lucky = lucky_ball == user_lucky_ball
+            if (lucky) {
+                document.write("<p> YOUR LUCKY BALLS MATCHED! </p>")
+            } else {
+                document.write("<p> Your lucky ball did not match </p>")
+            }
+
+            if (lucky && num_matches == 5) {
+                document.write("<p> CONGRATULATIONS YOU JUST WON $7,000 a WEEK for LIFE </p>")
+            } else if (!lucky && num_matches == 5) {
+                document.write("<p> CONGRATULATIONS YOU JUST WON $25,000 a YEAR for LIFE </p>")
+            } else if (lucky && num_matches == 4) {
+                document.write("<p> CONGRATULATIONS YOU JUST WON $5,000 </p>")
+            } else if (!lucky && num_matches == 4) {
+                document.write("<p> CONGRATULATIONS YOU JUST WON $200 </p>")
+            } else if (lucky && num_matches == 3) {
+                document.write("<p> CONGRATULATIONS YOU JUST WON $150 </p>")
+            } else if (!lucky && num_matches == 3) {
+                document.write("<p> CONGRATULATIONS YOU JUST WON $20 </p>")
+            } else if (lucky && num_matches == 2) {
+                document.write("<p> CONGRATULATIONS YOU JUST WON $25 </p>")
+            } else if (!lucky && num_matches == 2) {
+                document.write("<p> CONGRATULATIONS YOU JUST WON $3 </p>")
+            } else if (lucky && num_matches == 1) {
+                document.write("<p> CONGRATULATIONS YOU JUST WON $6 </p>")
+            } else if (lucky && num_matches == 0) {
+                document.write("<p> CONGRATULATIONS YOU JUST WON $4 </p>")
+            } else {
+                document.write("<p> You didn't win any money :( </p>")
+            }
+            
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

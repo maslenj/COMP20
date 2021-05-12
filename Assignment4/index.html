@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script>
+            let num_hotdogs = parseInt(prompt("how many hot dogs do you want?"))
+            let num_fries = parseInt(prompt("How many orders of fries do you want?"))
+            let num_sodas = parseInt(prompt("How many sodas do you want?"))
+            let price_hotdogs = 3.25 * num_hotdogs
+            let price_fries = 2.00 * num_fries
+            let price_sodas = 1.50 * num_sodas
+            let subtotal = price_hotdogs + price_fries + price_sodas
+            let discount = (subtotal >= 20)? subtotal * 0.1: 0
+            let tax = 0.0625 * (subtotal - discount)
+            let total = subtotal + tax - discount
+            document.write("<p> Number of hotdogs ordered: " + num_hotdogs + ", price: $" + price_hotdogs + "</p>")
+            document.write("<p> Number of french fry orders ordered: " + num_fries + ", price: $" + price_fries + "</p>")
+            document.write("<p> Number of sodas ordered: " + num_sodas + ", price: $" + price_sodas + "</p>")
+            document.write("<p> Subtotal: $" + subtotal + "</p>")
+            document.write("<p> Discount: $" + discount.toFixed(2) + "</p>")
+            document.write("<p> Tax: $" + tax.toFixed(2) + "</p>")
+            document.write("<p> Total: $" + total.toFixed(2) + "</p>")
+        </script>
+    </head>
+</html>

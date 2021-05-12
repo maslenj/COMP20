@@ -1,0 +1,10 @@
+{
+  "assignments": [
+    {
+      "name": "Introduction",
+      "file": "Assignment1",
+      "image": "assignment1",
+      "description": "This project was intended to be an intrduction to basic html and css."
+    }
+  ]
+}

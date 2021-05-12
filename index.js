@@ -1,4 +1,4 @@
-fetch("./employees.json")
+fetch("./assignments.json")
 .then(response => {
    return response.json();
 })

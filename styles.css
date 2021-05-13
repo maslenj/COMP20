@@ -6,7 +6,7 @@
   padding-top: var(--jumbotron-padding-y);
   padding-bottom: var(--jumbotron-padding-y);
   margin-bottom: 0;
-  background-color: #fff;
+  background-color: #f8f9fa!important;
 }
 @media (min-width: 768px) {
   .jumbotron {
@@ -19,7 +19,7 @@
   margin-bottom: 0;
 }
 
-.jumbotron-heading {
+.jumbotron-heading, .section-heading {
   font-weight: 300;
 }
 

@@ -1,3 +1,8 @@
+/*
+ * TODO: Change to only one for-loop
+ *
+ */
+
 const renderBadges = (tags) => {
   let res = " "
   for (let tag of tags) {

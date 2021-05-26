@@ -1,3 +1,8 @@
+/*
+ * TODO: Change to only one array
+ *
+*/
+
 let highlights =
 [
   {
@@ -29,14 +34,20 @@ let assignments =
 [
   {
     name: "Introduction",
+    assignment: "Assignment 1",
     number: 1,
+    link: "Assignment1",
+    source: "https://github.com/maslenj/COMP20/tree/master/Assignment1",
     description: "This project was intended to be an intrduction to basic html and css. \
     I have included basic information about myself as well as some simple styling.",
     tags: ["HTML", "CSS"]
   },
   {
     name: "Business Website",
+    assignment: "Assignment 2",
     number: 2,
+    link: "Assignment2",
+    source: "https://github.com/maslenj/COMP20/tree/master/Assignment2",
     description: "A more advanced project involving just HTML and CSS. The site is designed for \
     a mock sandwich restaurant. I collaborated with one other student to build this project.",
     tags: ["HTML", "CSS"]
